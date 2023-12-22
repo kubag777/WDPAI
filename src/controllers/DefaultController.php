@@ -3,10 +3,12 @@
 require_once 'AppController.php';
 class DefaultController extends AppController{
     function login(){
-        include __DIR__.'/../views/login.html';
+        $this->render('login');
+        //include __DIR__.'/../views/login.php';
     }
 
     function dashboard(){  
-        include __DIR__.'/../views/dashboard.html';
+        $this->render('dashboard');
+       // include __DIR__.'/../views/dashboard.html';
     }
 }
