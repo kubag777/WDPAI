@@ -112,4 +112,92 @@ form.login button {
   border-radius: 100px;
 }
 
+@media screen and (max-aspect-ratio: 16/9) {
+  body {
+    background-color: 17181c;
+    display: flex;
+    flex-direction: column; /* Zmiana kierunku flex na kolumnowy dla lepszego dostosowania do urządzeń mobilnych */
+    align-items: center; 
+  }
+  
+  .overlap-group {
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    left: 0;
+  }
+  
+  .login-text {
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #eef14d;
+    font-size: 8vh; /* Dostosowanie rozmiaru czcionki */
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .button-signUp {
+    width: 3vh; 
+    background-color: #eef14d;
+    border-radius: 50px;
+  }
+  
+  .SignUp {
+    position:absolute;
+    top: 0;
+    left: 0;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 5vh; /* Dostosowanie rozmiaru czcionki */
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .login {
+    position: relative; /* Zmiana na relatywną, aby formularz był responsywny w kontekście rodzica */
+    width: 96%;
+    left: 0;
+  }
+  
+  form.login input[type="text"],
+  form.login input[type="password"] {
+    margin: 2%; /* Zmniejszenie marginesu */
+    box-sizing: border-box;
+    background-color: #999999;
+    border-radius: 50px; /* Zmniejszenie zaokrąglenia narożników */
+    text-align: center;
+    font-size: 4vh; /* Dostosowanie rozmiaru czcionki */
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    height: 10vh;
+  }
+  
+  form.login button {
+    margin: 2%;
+    font-size: 6vh; /* Dostosowanie rozmiaru czcionki */
+    border-radius: 50px;
+    text-align: center;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    background-color: #eef14d;
+    height: 10vh;
+
+  }
+  
+  .forgot {
+    height: 10%; /* Zmniejszenie wysokości */
+    margin-top: 40vh; /* Zmniejszenie marginesu górnego */
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #eef14d;
+    font-size: 5vh; /* Dostosowanie rozmiaru czcionki */
+    text-align: center;
+    text-decoration: underline;
+  }
+  
+}
 
