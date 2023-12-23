@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/login.css">
     <title>LOGIN PAGE</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="public/img/logo.svg">
-        </div>
-        <div class="login-container">
-            <form class="login" action="login" method="POST">
-                <div class="messages">
-                    <?php
-                        if(isset($messages)){
-                            foreach($messages as $message) {
-                                echo $message;
-                            }
-                        }
-                    ?>
-                </div>
-                <input name="email" type="text" placeholder="email@email.com">
-                <input name="password" type="password" placeholder="password">
-                <button type="submit">LOGIN</button>
-            </form>
-        </div>
+        <div class="overlap-group">
+        <div class="page-header"><div class="login-text">Log In</div></div>
+        <div class="button-signUp"><div class="SignUp">Sign Up</div></div>
+        <form class="login" action="login" method="POST">
+            <div class="messages">
+                <?php
+                if(isset($messages)){
+                    foreach($messages as $message) {
+                        echo $message;
+                    }
+                }
+                ?>
+            </div>
+            <input name="input-text" type="text" placeholder="email@email.com">
+            <input name="pass" type="password" placeholder="password">
+            <button type="loginButton">LOGIN</button>
+        </form>
+        <div class="forgot">Forgot your password?</div>
     </div>
+
 </body>

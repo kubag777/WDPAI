@@ -1,58 +1,115 @@
-input, button {
-    border-radius: 1em;
-    height: 3rem;
-    width: 30vw;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    border: unset;
-   }
-   button {
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-    background-color: #EEF14D;
-    font-size: 1.5rem;
-   }
-   form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-   }
-   .login-container {
-    width: 50vw;
-    height: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   }
-   body.login {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-   }
-   @media (max-width: 600px) {
-    #image-1, #image-2 {
-    display: none;
-    }
-    .login-container {
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0;
-    }
-   }
+body {
+  background-color: #17181c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.overlap-group {
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  left: 0;
+}
+
+.login-text {
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #eef14d;
+  font-size: 14vh;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.SignUp {
+  position: relative;
+  width: 282px;
+  height: 79px;
+  margin-left: -22.5px;
+  margin-right: -22.5px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 70px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.login {
+  position: fixed;
+  width: 30%;
+  height: 40%;
+  top: 20%;
+  left: 35%;
+}
+
+form.login input[type="text"],
+form.login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    background-color: #999999;
+    border-radius: 50px;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    font-size: 4vh;
+    font-style: normal;
+    line-height: normal;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+}
+
+form.login button {
+  background-color: #eef14d;
+  color: black;
+  margin: 15px 0;
+  width: 100%;
+  height: 20%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 6vh;
+  font-style: normal;
+  line-height: normal;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+}
+
+.forgot {
+  position: relative;
+  height: 20%;
+  margin-top: 45vh;
+  font-family: "Inter-Medium", Helvetica;
+  font-weight: 500;
+  color: #eef14d;
+  font-size: 6vh;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.button-signUp {
+  display: flex;
+  flex-direction: column;
+  width: 301px;
+  height: 131px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 32px;
+  position: absolute;
+  top: 0;
+  left: 1555px;
+  background-color: #eef14d;
+  border-radius: 100px;
+}
 
 
-   /* moje zmiany */
-   body{
-    background-color: black;
-   }
-
-   h1{
-    color: #EEF14D;
-   }
-
-   button.sign-in{
-    
-   }
