@@ -1,38 +1,43 @@
-body {
-  background-color: #17181c;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.container {
   width: 100%;
 }
+
 
 .overlap-group {
   position: fixed;
   width: 100%;
   height: 10%;
-  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  left: 75vh;
+  top: 5vh;
+}
+
+.page-header {
+  flex: 1;
 }
 
 .login-text {
-  font-family: "Inter-SemiBold", Helvetica;
   font-weight: 600;
   color: #eef14d;
   font-size: 14vh;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0;
   line-height: normal;
 }
 
+.button-signUp {
+  width: 40vh;
+  background-color: #eef14d;
+  border-radius: 100px;
+  margin-right: 80vh;
+}
+
 .SignUp {
-  position: relative;
-  width: 282px;
-  height: 79px;
-  margin-left: -22.5px;
-  margin-right: -22.5px;
-  font-family: "Inter-SemiBold", Helvetica;
   font-weight: 600;
   color: #000000;
-  font-size: 70px;
+  font-size: 8vh;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
@@ -61,7 +66,6 @@ form.login input[type="password"] {
     font-size: 4vh;
     font-style: normal;
     line-height: normal;
-    font-family: "Inter-SemiBold", Helvetica;
     font-weight: 600;
 }
 
@@ -78,7 +82,6 @@ form.login button {
   font-size: 6vh;
   font-style: normal;
   line-height: normal;
-  font-family: "Inter-SemiBold", Helvetica;
   font-weight: 600;
 }
 
@@ -86,7 +89,6 @@ form.login button {
   position: relative;
   height: 20%;
   margin-top: 45vh;
-  font-family: "Inter-Medium", Helvetica;
   font-weight: 500;
   color: #eef14d;
   font-size: 6vh;
@@ -96,21 +98,6 @@ form.login button {
   text-decoration: underline;
 }
 
-.button-signUp {
-  display: flex;
-  flex-direction: column;
-  width: 301px;
-  height: 131px;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 16px 32px;
-  position: absolute;
-  top: 0;
-  left: 1555px;
-  background-color: #eef14d;
-  border-radius: 100px;
-}
 
 @media screen and (max-aspect-ratio: 16/9) {
   body {
@@ -128,7 +115,6 @@ form.login button {
   }
   
   .login-text {
-    font-family: "Inter-SemiBold", Helvetica;
     font-weight: 600;
     color: #eef14d;
     font-size: 8vh; /* Dostosowanie rozmiaru czcionki */
@@ -147,7 +133,6 @@ form.login button {
     position:absolute;
     top: 0;
     left: 0;
-    font-family: "Inter-SemiBold", Helvetica;
     font-weight: 600;
     color: #000000;
     font-size: 5vh; /* Dostosowanie rozmiaru czcionki */
@@ -171,7 +156,6 @@ form.login button {
     border-radius: 50px; /* Zmniejszenie zaokrąglenia narożników */
     text-align: center;
     font-size: 4vh; /* Dostosowanie rozmiaru czcionki */
-    font-family: "Inter-SemiBold", Helvetica;
     font-weight: 600;
     height: 10vh;
   }
@@ -181,7 +165,6 @@ form.login button {
     font-size: 6vh; /* Dostosowanie rozmiaru czcionki */
     border-radius: 50px;
     text-align: center;
-    font-family: "Inter-SemiBold", Helvetica;
     font-weight: 600;
     background-color: #eef14d;
     height: 10vh;
@@ -191,7 +174,6 @@ form.login button {
   .forgot {
     height: 10%; /* Zmniejszenie wysokości */
     margin-top: 40vh; /* Zmniejszenie marginesu górnego */
-    font-family: "Inter-Medium", Helvetica;
     font-weight: 500;
     color: #eef14d;
     font-size: 5vh; /* Dostosowanie rozmiaru czcionki */
