@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: right;
-  left: 75vh;
+  left: 40%;
   top: 5vh;
 }
 
@@ -31,7 +31,7 @@
   width: 40vh;
   background-color: #eef14d;
   border-radius: 100px;
-  margin-right: 80vh;
+  margin-right: 43%;
 }
 
 .SignUp {
@@ -86,9 +86,8 @@ form.login button {
 }
 
 .forgot {
-  position: relative;
+  position: fixed;
   height: 20%;
-  margin-top: 45vh;
   font-weight: 500;
   color: #eef14d;
   font-size: 6vh;
@@ -96,24 +95,33 @@ form.login button {
   letter-spacing: 0;
   line-height: normal;
   text-decoration: underline;
+  margin: 55vh 35%;
 }
 
 
 @media screen and (max-aspect-ratio: 16/9) {
-  body {
-    background-color: 17181c;
+  .container{
+    width: 100%;
     display: flex;
-    flex-direction: column; /* Zmiana kierunku flex na kolumnowy dla lepszego dostosowania do urządzeń mobilnych */
-    align-items: center; 
   }
-  
+
   .overlap-group {
     position: fixed;
     width: 100%;
     height: 10vh;
     left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    left: 30%;
+    top: 5vh;
   }
   
+  .page-header {
+    flex: 1;
+    margin: 0 2vh;
+  }
+
   .login-text {
     font-weight: 600;
     color: #eef14d;
@@ -121,18 +129,18 @@ form.login button {
     text-align: center;
     letter-spacing: 0;
     line-height: normal;
+    white-space: nowrap;
   }
   
   .button-signUp {
-    width: 3vh; 
+    width: 25vh; 
     background-color: #eef14d;
     border-radius: 50px;
+    padding: 2vh;
+    margin-right: 53vh;
   }
   
   .SignUp {
-    position:absolute;
-    top: 0;
-    left: 0;
     font-weight: 600;
     color: #000000;
     font-size: 5vh; /* Dostosowanie rozmiaru czcionki */
@@ -140,17 +148,18 @@ form.login button {
     letter-spacing: 0;
     line-height: normal;
     white-space: nowrap;
+
   }
   
   .login {
-    position: relative; /* Zmiana na relatywną, aby formularz był responsywny w kontekście rodzica */
+    position: fixed; /* Zmiana na relatywną, aby formularz był responsywny w kontekście rodzica */
     width: 96%;
     left: 0;
   }
   
   form.login input[type="text"],
   form.login input[type="password"] {
-    margin: 2%; /* Zmniejszenie marginesu */
+    margin: 3px 2%; /* Zmniejszenie marginesu */
     box-sizing: border-box;
     background-color: #999999;
     border-radius: 50px; /* Zmniejszenie zaokrąglenia narożników */
@@ -161,7 +170,7 @@ form.login button {
   }
   
   form.login button {
-    margin: 2%;
+    margin: 3px 2%;
     font-size: 6vh; /* Dostosowanie rozmiaru czcionki */
     border-radius: 50px;
     text-align: center;
@@ -172,13 +181,14 @@ form.login button {
   }
   
   .forgot {
+    position: fixed;
     height: 10%; /* Zmniejszenie wysokości */
-    margin-top: 40vh; /* Zmniejszenie marginesu górnego */
     font-weight: 500;
     color: #eef14d;
     font-size: 5vh; /* Dostosowanie rozmiaru czcionki */
     text-align: center;
     text-decoration: underline;
+    margin: 55vh 20%;
   }
   
 }

@@ -4,3 +4,12 @@ body {
     width: 100%;
     font-family: "Inter-SemiBold", Helvetica;
   }
+
+  @media screen and (max-aspect-ratio: 16/9) {
+    body {
+        background-color: 17181c;
+        display: flex;
+        flex-direction: column; /* Zmiana kierunku flex na kolumnowy dla lepszego dostosowania do urządzeń mobilnych */
+        align-items: center; 
+      }
+    }
