@@ -56,8 +56,7 @@ button {
 form.login input[type="text"],
 form.login input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin: 15px 0;
+    margin: 1vh 0;
     box-sizing: border-box;
     background-color: #999999;
     border-radius: 50px;
@@ -73,7 +72,7 @@ form.login input[type="password"] {
 form.login button {
   background-color: #eef14d;
   color: black;
-  margin: 15px 0;
+  margin: 1vh 0;
   width: 100%;
   height: 20%;
   border: none;
@@ -88,15 +87,13 @@ form.login button {
 
 .forgot {
   position: fixed;
-  height: 20%;
+  height: 10%;
   font-weight: 500;
   color: #eef14d;
   font-size: 6vh;
   text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
   text-decoration: underline;
-  margin: 55vh 35%;
+  margin: 50vh 40%;
 }
 
 
@@ -154,7 +151,7 @@ form.login button {
   
   .login {
     position: fixed; /* Zmiana na relatywną, aby formularz był responsywny w kontekście rodzica */
-    width: 96%;
+    width: 90%;
     left: 0;
   }
   
