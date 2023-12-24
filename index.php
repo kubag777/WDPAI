@@ -10,7 +10,10 @@ $actions = explode("/", $path);
 $routes = [
     "login" => "DefaultController",
     "dashboard" => "DefaultController",
-    "register" => "DefaultController"
+    "register" => "DefaultController",
+    "lists" => "DefaultController",
+    "friends" => "DefaultController",
+    "profile" => "DefaultController"
 ];
 
 

@@ -16,4 +16,16 @@ class DefaultController extends AppController{
         $this->render('register');
        // include __DIR__.'/../views/dashboard.html';
     }
+    function lists(){  
+        $this->render('lists');
+       // include __DIR__.'/../views/dashboard.html';
+    }
+    function friends(){  
+        $this->render('friends');
+       // include __DIR__.'/../views/dashboard.html';
+    }
+    function profile(){  
+        $this->render('profile');
+       // include __DIR__.'/../views/dashboard.html';
+    }
 }

@@ -56,8 +56,7 @@
   form.register input[type="text"],
   form.register input[type="password"] {
       width: 100%;
-      padding: 10px;
-      margin: 15px 0;
+      margin: 1vh 0;
       box-sizing: border-box;
       background-color: #999999;
       border-radius: 50px;
@@ -73,7 +72,7 @@
   form.register button {
     background-color: #eef14d;
     color: black;
-    margin: 15px 0;
+    margin: 1vh 0;
     width: 100%;
     height: 20%;
     border: none;
@@ -159,7 +158,7 @@
     
     form.register input[type="text"],
     form.register input[type="password"] {
-      margin: 3px 2%; /* Zmniejszenie marginesu */
+      margin: 1vh 2%; /* Zmniejszenie marginesu */
       box-sizing: border-box;
       background-color: #999999;
       border-radius: 50px; /* Zmniejszenie zaokrąglenia narożników */
@@ -170,7 +169,7 @@
     }
     
     form.register button {
-      margin: 3px 2%;
+      margin: 1vh 2%;
       font-size: 6vh; /* Dostosowanie rozmiaru czcionki */
       border-radius: 50px;
       text-align: center;

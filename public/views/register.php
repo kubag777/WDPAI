@@ -22,8 +22,9 @@
                     ?>
                 </div>
                 <input name="input-text" type="text" placeholder="email@email.com">
-                <input name="input-text" type="text" placeholder="email@email.com">
-                <input name="pass" type="password" placeholder="password">
+                <input name="input-name" type="text" placeholder="Name">
+                <input name="input-surname" type="text" placeholder="Surname">
+                <input name="pass" type="password" placeholder="Password">
                 <button type="registerButton">REGISTER</button>
             </form>
         </div>
