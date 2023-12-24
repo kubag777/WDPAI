@@ -2,16 +2,16 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/global.css">
-    <link rel="stylesheet" type="text/css" href="public/css/login.css">
-    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" type="text/css" href="public/css/register.css">
+    <title>Zarejestruj się</title>
 </head>
 
 <body>
     <div class="container">
         <div class="overlap-group">
-            <div class="page-header"><div class="login-text">Log In</div></div>
-            <button type="button-signUp" onclick="window.location.href='register'"><div class="SignUp">Sign Up</div></button>
-            <form class="login" action="login" method="POST">
+            <div class="page-header"><div class="register-text">Register</div></div>
+            <button type="button-signUp" onclick="window.location.href='login'"><div class="logIn">Login</div></button>
+            <form class="register" action="register" method="POST">
                 <div class="messages">
                     <?php
                     if(isset($messages)){
@@ -22,10 +22,10 @@
                     ?>
                 </div>
                 <input name="input-text" type="text" placeholder="email@email.com">
+                <input name="input-text" type="text" placeholder="email@email.com">
                 <input name="pass" type="password" placeholder="password">
-                <button type="loginButton">LOGIN</button>
+                <button type="registerButton">REGISTER</button>
             </form>
         </div>
-        <div class="forgot"><a href="">Forgot your password?</a></div>
     </div>
 </body>

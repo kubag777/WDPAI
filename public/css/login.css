@@ -27,11 +27,12 @@
   line-height: normal;
 }
 
-.button-signUp {
+button {
   width: 40vh;
   background-color: #eef14d;
   border-radius: 100px;
   margin-right: 43%;
+  cursor: pointer;
 }
 
 .SignUp {

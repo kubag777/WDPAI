@@ -11,4 +11,9 @@ class DefaultController extends AppController{
         $this->render('dashboard');
        // include __DIR__.'/../views/dashboard.html';
     }
+
+    function register(){  
+        $this->render('register');
+       // include __DIR__.'/../views/dashboard.html';
+    }
 }

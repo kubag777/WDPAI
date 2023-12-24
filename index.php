@@ -9,7 +9,8 @@ $actions = explode("/", $path);
 
 $routes = [
     "login" => "DefaultController",
-    "dashboard" => "DefaultController"
+    "dashboard" => "DefaultController",
+    "register" => "DefaultController"
 ];
 
 
