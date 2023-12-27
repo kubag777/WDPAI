@@ -12,7 +12,9 @@ session_start();
             return isset($_SESSION['user_id']);
         }
         public function logout(){
+            session_unset();
             session_destroy();
+            header("Location: login");
         }
         public function getUserId(): int{
             return $_SESSION['user_id'];

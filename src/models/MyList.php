@@ -60,4 +60,7 @@ class MyList {
     public function getName() {
         return $this->name;
     }
+    public function getListID() {
+        return $this->list_id;  
+    }
 }
