@@ -14,76 +14,26 @@
         </div>
         <!-- Dodać php z wczytywaniem list z bazy i wyswietlaniem zamiast tych elementów -->
         <div class = "lists">
-            <!-- Pojedynczy obiekt listy -->
-            <div class = "oneList" onclick="window.location.href='register'">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
-                        <!-- Pojedynczy obiekt listy -->
-                        <div class = "oneList">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
-                        <!-- Pojedynczy obiekt listy -->
-                        <div class = "oneList">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
-                        <!-- Pojedynczy obiekt listy -->
-                        <div class = "oneList">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
-                        <!-- Pojedynczy obiekt listy -->
-            <div class = "oneList">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
-                                    <!-- Pojedynczy obiekt listy -->
-                                    <div class = "oneList">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
-                                    <!-- Pojedynczy obiekt listy -->
-                                    <div class = "oneList">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
-                                    <!-- Pojedynczy obiekt listy -->
-                                    <div class = "oneList">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
-                                    <!-- Pojedynczy obiekt listy -->
-                                    <div class = "oneList">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
-                                    <!-- Pojedynczy obiekt listy -->
-                                    <div class = "oneList">
-                <div class="listIcon"></div>
-                <div class="listData">
-                    <div class="nazwa">Lista1</div>
-                </div>
-            </div>
+            <?php
+                require_once __DIR__.'/../../src/repository/ListsRepository.php';
+                $session = new SessionController();
+                if(!$session->checkSession()) {
+                    echo "Brak sesji";
+                    // przekieruj do login.php
+                } else {
+                    $listsRepo = new ListsRepository();
+                    $userLists = $listsRepo->getUserLists($session->getUserId());
+                    foreach ($userLists as $list => $value) {
+                        echo '<div class = "oneList">';
+                        echo '<div class="listIcon"></div>';
+                        echo '<div class="listData">';
+                        echo '    <div class="nazwa">'. $value->getName() .'</div>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                }
+            ?>
+           
         </div>
     </div>
 </body>

@@ -1,15 +1,18 @@
 <?php
 
 class MyList {
+    private $list_id;
     private $name;
     private $users = [];
     private $fields = [];
 
     public function __construct(
         string $name,
-        array $users = []
+        array $users = [],
+        int $list_id = null
     ) {
         $this->name = $name;
+        $this->list_id = $list_id;
         foreach ($users as $user) {
             if ($user instanceof User) {
                 $this->addUser($user);
@@ -53,5 +56,8 @@ class MyList {
         if ($indexToRemove !== null) {
             unset($this->fields[$indexToRemove]);
         }
+    }
+    public function getName() {
+        return $this->name;
     }
 }
