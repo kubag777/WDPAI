@@ -8,6 +8,7 @@ $path = trim($path, "/");
 $actions = explode("/", $path);
 
 $routes = [
+    "" => "DefaultController",
     "login" => "DefaultController",
     "dashboard" => "DefaultController",
     "register" => "DefaultController",
