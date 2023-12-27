@@ -12,19 +12,10 @@
             <div class="page-header"><div class="register-text">Register</div></div>
             <button type="button-signUp" onclick="window.location.href='login'"><div class="logIn">Login</div></button>
             <form class="register" action="register" method="POST">
-                <div class="messages">
-                    <?php
-                    if(isset($messages)){
-                        foreach($messages as $message) {
-                            echo $message;
-                        }
-                    }
-                    ?>
-                </div>
-                <input name="input-text" type="text" placeholder="email@email.com">
-                <input name="input-name" type="text" placeholder="Name">
-                <input name="input-surname" type="text" placeholder="Surname">
-                <input name="pass" type="password" placeholder="Password">
+                <input name="email" type="text" placeholder="email@email.com">
+                <input name="name" type="text" placeholder="Name">
+                <input name="surname" type="text" placeholder="Surname">
+                <input name="password" type="password" placeholder="Password">
                 <button type="registerButton">REGISTER</button>
             </form>
         </div>

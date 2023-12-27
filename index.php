@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__."/src/controllers/DefaultController.php";
+require_once __DIR__."/src/controllers/SecurityController.php";
 
 $path = $_SERVER["REQUEST_URI"];
 $path = trim($path, "/");
@@ -9,9 +10,8 @@ $actions = explode("/", $path);
 
 $routes = [
     "" => "DefaultController",
-    "login" => "DefaultController",
-    "dashboard" => "DefaultController",
-    "register" => "DefaultController",
+    "login" => "SecurityController",
+    "register" => "SecurityController",
     "lists" => "DefaultController",
     "friends" => "DefaultController",
     "profile" => "DefaultController"

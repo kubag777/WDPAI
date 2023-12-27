@@ -30,6 +30,14 @@ class AppController {
             include $templatePath;
             $output = ob_get_clean();
         }
+    
+        // Add JavaScript for displaying an alert if there are error messages
+        if (isset($variables['messages']) && is_array($variables['messages'])) {
+            echo '<script>';
+            echo 'alert("' . implode('\n', $variables['messages']) . '");';
+            echo '</script>';
+        }
+    
         print $output;
     }
 }

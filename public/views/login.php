@@ -12,17 +12,8 @@
             <div class="page-header"><div class="login-text">Log In</div></div>
             <button type="button-signUp" onclick="window.location.href='register'"><div class="SignUp">Sign Up</div></button>
             <form class="login" action="login" method="POST">
-                <div class="messages">
-                    <?php
-                    if(isset($messages)){
-                        foreach($messages as $message) {
-                            echo $message;
-                        }
-                    }
-                    ?>
-                </div>
-                <input name="input-text" type="text" placeholder="email@email.com">
-                <input name="pass" type="password" placeholder="password">
+                <input name="email" type="text" placeholder="email@email.com">
+                <input name="password" type="password" placeholder="password">
                 <button type="loginButton">LOGIN</button>
             </form>
         </div>

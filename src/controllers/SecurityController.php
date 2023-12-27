@@ -21,8 +21,7 @@ class SecurityController extends AppController {
         }
 
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
-
+        
         $user = $this->userRepository->getUser($email);
 
         if (!$user) {
@@ -33,12 +32,13 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
         }
 
-        if ($user->getPassword() !== $password) {
+        if (!password_verify($_POST['password'], $user->getPassword())) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
+        // gdzie przenieść po logowaniu
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/projects");
+        header("Location: {$url}/lists");
     }
 
     public function register()
@@ -49,17 +49,16 @@ class SecurityController extends AppController {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $confirmedPassword = $_POST['confirmedPassword'];
+       // $confirmedPassword = $_POST['confirmedPassword'];
         $name = $_POST['name'];
         $surname = $_POST['surname'];
-        $phone = $_POST['phone'];
 
-        if ($password !== $confirmedPassword) {
-            return $this->render('register', ['messages' => ['Please provide proper password']]);
-        }
+        // if ($password !== $confirmedPassword) {
+        //     return $this->render('register', ['messages' => ['Please provide proper password']]);
+        // }
 
         //TODO try to use better hash function
-        $user = new User($email, md5($password), $name, $surname);
+        $user = new User($email, password_hash($password, PASSWORD_DEFAULT), $name, $surname);
 
         $this->userRepository->addUser($user);
 
