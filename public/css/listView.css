@@ -34,10 +34,59 @@ button {
 }
 
 .fields {
-    background-color: #eef14d;
+    background: #eef14d;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    width: 80%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(5, calc(6px + 10vh));
     margin: 0;
+    padding: 10px;
+    width: 80%;
+    height: 80vh;
+    border-radius: 50px;
+}
+
+.oneList{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    border-radius: 12px;
+    background: #17181c;
+    overflow: hidden;
+    cursor: pointer;
+    height: 10vh;
+    width: 90%;
+    margin: 1vh 5%;
+    color: #eef14d;
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+.newFieldWnd {
+    flex-direction: column;
+    background: #eef14d;
+    border: black solid 2px;
+    border-radius: 20px;
+    display: none;
+    width: 400px;
+    height: 200px;
+}
+
+.newFieldWnd.visible {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.newFieldWnd>form {
+    width: 80%;
+    padding: 5px;
+    justify-content:stretch;
+    display: flex;
+}
+
+.newFieldWnd>form>input {
+    display: flex;
 }

@@ -1,14 +1,15 @@
 <?php
 
-class MyFields {
+class MyField {
     private $name;
     private $isChecked;
 
     public function __construct(
-        string $name
+        string $name,
+        bool $isChecked = false
     ) {
         $this->name = $name;
-        $this->isChecked = false;
+        $this->isChecked = $isChecked;
     }
 
     public function getState() {
@@ -16,5 +17,8 @@ class MyFields {
     }
     public function changeState() {
         $this->isChecked = !($this->isChecked);
+    }
+    public function getName() {
+        return $this->name;
     }
 }

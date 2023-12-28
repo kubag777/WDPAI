@@ -14,4 +14,7 @@ class DefaultController extends AppController{
     function listView(){  
         $this->render('listView');
     }
+    function index(){  
+        $this->render('lists');
+    }
 }

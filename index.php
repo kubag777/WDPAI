@@ -1,31 +1,23 @@
 <?php
 
-require_once __DIR__."/src/controllers/DefaultController.php";
-require_once __DIR__."/src/controllers/SecurityController.php";
-require_once __DIR__."/src/controllers/SessionController.php";
+require 'Routing.php';
 
-$path = $_SERVER["REQUEST_URI"];
-$path = trim($path, "/");
+$path = trim($_SERVER['REQUEST_URI'], '/');
+$path = parse_url($path, PHP_URL_PATH);
 
-$actions = explode("/", $path);
+Router::get('', 'DefaultController');
 
-$routes = [
-    "" => "DefaultController",
-    "login" => "SecurityController",
-    "register" => "SecurityController",
-    "lists" => "DefaultController",
-    "friends" => "DefaultController",
-    "profile" => "DefaultController",
-    "listView" => "DefaultController",
-    "logout" => "SessionController"
-];
+Router::get('lists', 'DefaultController');
+Router::get('friends', 'DefaultController');
+Router::get('profile', 'DefaultController');
+Router::get('listView', 'DefaultController');
 
+Router::post('login', 'SecurityController');
+Router::post('register', 'SecurityController');
 
-if(!array_key_exists($actions[0], $routes)) {
-    die("404 not found");
-}
+Router::get('logout', 'SessionController');
+// dodać kontroler do obsługi dopdawania pol i list
+Router::get('addNewFieldWnd', '');
 
-$controller = new $routes[$actions[0]]();
-
-$action = $actions[0];
-$controller->$action();
+Router::run($path);
+?>

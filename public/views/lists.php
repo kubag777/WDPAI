@@ -21,7 +21,7 @@
     <div class="mainFrame">
         <div class="headerClass">
             <span>Twoje listy</span>
-            <button type="button-signUp" onclick="window.location.href='register'"><div class="addNew">+</div></button>
+            <button type="button-signUp" onclick="addNewListWnd()"><div class="addNew">+</div></button>
         </div>
         <!-- Dodać php z wczytywaniem list z bazy i wyswietlaniem zamiast tych elementów -->
         <div class = "lists">
@@ -35,7 +35,7 @@
                     $listsRepo = new ListsRepository();
                     $userLists = $listsRepo->getUserLists($session->getUserId());
                     foreach ($userLists as $list => $value) {
-                        echo '<div class = "oneList" onclick="window.location.href=\'listView#'.$value->getListID().'\'">';
+                        echo '<div class = "oneList" onclick="window.location.href=\'listView/?id='.$value->getListID().'\'">';
                         echo '<div class="listIcon"></div>';
                         echo '<div class="listData">';
                         echo '    <div class="nazwa">'. $value->getName() .'</div>';
@@ -47,4 +47,18 @@
            
         </div>
     </div>
+
+    <div class="newListWnd">
+        <form method="post" action="">
+            <input type="listName" name="listName" placeholder="Nazwa Listy">
+            <input type="friend" name="friend" placeholder="Partner">
+            <input type="submit" value="Dodaj">
+        </form>
+    </div>
 </body>
+
+<script>
+    function addNewListWnd(e) {
+        document.querySelector('.newListWnd').classList.toggle('visible');
+    }
+</script>
