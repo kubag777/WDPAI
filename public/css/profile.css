@@ -1,0 +1,43 @@
+.mainFrame {
+    background: #eef14d;
+    display: flex;
+    flex-direction: row;
+    margin: 10vh 0;
+    padding: 10px;
+    width: 80%;
+    height: 80vh;
+    border-radius: 50px;
+}
+
+.picture{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 1vh 1vw;
+}
+
+img{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 100%;
+}
+
+h1{
+    font-size: 6vw;
+}
+h2{
+    font-size: 4vw;
+}
+
+h3{
+    font-size: 3vw;
+}

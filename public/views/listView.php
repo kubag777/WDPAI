@@ -25,21 +25,9 @@
         </div>
         <div class = "fields">
             <?php
-                if (isset($_GET['id'])) {
-                    require_once __DIR__.'/../../src/repository/ListsRepository.php';
-                    $paramValue = $_GET['id'];
-                    $listsRepo = new ListsRepository(); 
-                    $fields = $listsRepo->getMyFields($paramValue);
-                    foreach ($fields as $field) {
-                    // dodać znaczek zaznaczenia 
-                    if($field->getState() == 1){
-                        echo '<div class = "oneList" onclick="changeFieldState('.$field->getFieldId().')"><a>'.$field->getName().'</a><img src="/public/img/check-icon.png" style = "width: 50px;"></div>';
-                    } else {
-                        echo '<div class = "oneList" onclick="changeFieldState('.$field->getFieldId().')"><a>'.$field->getName().'</a><img src="/public/img/x-icon.png" style = "width: 50px;"></div>';
-                    }
-                }
-            }
+                echo '<iframe id="grid-iframe" src="/listElems/?id='.$_GET['id'].'" ></iframe>';
             ?>
+            
         </div>
     </div>
     <div class="newFieldWnd">
@@ -87,18 +75,31 @@
     
 // POLIGON TESTOWY
 
-    function refreshTable(){
-        fetch(location)
-        .then(response => {location.reload();})
-        .then(data => {
-            document.getElementById('tableHolder').innerHTML = data;
-        })
-        .catch(error => console.error('Error:', error));
-        setTimeout(refreshTable, 5000 );
+    // function refreshTable(){
+    //     fetch(location)
+    //     .then(response => {location.reload();})
+    //     .then(data => {
+    //         document.getElementById('tableHolder').innerHTML = data;
+    //     })
+    //     .catch(error => console.error('Error:', error));
+    //     setTimeout(refreshTable, 5000 );
+    // }
+
+    // setTimeout(refreshTable, 5000 );
+
+    function odswiezIframe() {
+        // Pobierz referencję do iframe
+        var iframe = document.getElementById('grid-iframe');
+        // Ustaw nową wartość atrybutu src
+        iframe.src = iframe.src;
+        // Uruchom ponownie funkcję co 5 sekund (5000 ms)
+        setTimeout(odswiezIframe, 10000);
     }
 
-    setTimeout(refreshTable, 5000 );
-
+    // Uruchom funkcję odświeżającą iframe po załadowaniu strony
+    window.onload = function () {
+        odswiezIframe();
+    };
 
 
 

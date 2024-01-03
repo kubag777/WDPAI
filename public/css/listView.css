@@ -37,14 +37,24 @@ button {
 
 .fields {
     background: #eef14d;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(5, calc(6px + 10vh));
+    display: flex;
     margin: 0;
     padding: 10px;
     width: 80%;
     height: 80vh;
     border-radius: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(5, calc(6px + 10vh));
+}
+
+@media screen and (max-width: 800px) {
+    .grid-container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
 }
 
 .oneList{
@@ -112,4 +122,10 @@ button {
 .newFieldWnd>form>input[type="submit"]{
     width: 40%;
     margin-left: 30%;
+}
+
+iframe {
+    border: none; /* Usunięcie ramki */
+    width: 100%; /* Przykładowa szerokość */
+    height: 100%; /* Przykładowa wysokość */
 }

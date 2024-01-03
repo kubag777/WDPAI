@@ -11,6 +11,7 @@ Router::get('lists', 'DefaultController');
 Router::get('friends', 'DefaultController');
 Router::get('profile', 'DefaultController');
 Router::get('listView', 'DefaultController');
+Router::get('listElems', 'DefaultController');
 
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
