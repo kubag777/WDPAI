@@ -16,8 +16,11 @@ Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 
 Router::get('logout', 'SessionController');
+
 // dodać kontroler do obsługi dopdawania pol i list
-Router::get('addNewFieldWnd', '');
+Router::post('addNewField', 'DataController');
+Router::post('addNewList', 'DataController');
+Router::post('changeFieldState', 'DataController');
 
 Router::run($path);
 ?>

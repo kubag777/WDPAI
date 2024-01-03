@@ -49,6 +49,7 @@ class ListsRepository extends Repository
         $fieldsToReturn = [];
         foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $fieldArray) {
             $myField = new MyField($fieldArray['name'], $fieldArray['is_checked']);
+            $myField->setFieldId($fieldArray['field_id']);
             $fieldsToReturn[] = $myField;
         }
         return $fieldsToReturn;
@@ -62,12 +63,46 @@ class ListsRepository extends Repository
         $stmt->bindParam(':list_id', $list_id, PDO::PARAM_STR);
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->execute();
-        return;
     }
-}
 
-// przenisc do kontrolera
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $repo = new ListsRepository;
-    $repo->addNewField($_POST['fieldName'], $_POST['list_id']);
+    public function changeFieldState(int $field_id):void{
+        $stmt = $this->database->connect()->prepare('
+            UPDATE fields
+            SET is_checked = not (SELECT is_checked FROM fields where field_id = :field_id)
+            WHERE field_id = :field_id
+        ');
+        $stmt->bindParam(':field_id', $field_id, PDO::PARAM_STR);
+        $stmt->execute();
+    }
+
+    public function addNewList(string $name, int $owner_id, int $friend_id): void {
+        $stmt = $this->database->connect()->prepare('
+        INSERT INTO lists (list_name, owner_user_id)
+        VALUES (:name, :owner_id);
+        ');
+        $stmt->bindParam(':owner_id', $owner_id, PDO::PARAM_STR);
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $stmtListID = $this->database->connect()->prepare('
+        SELECT MAX(list_id) as list_id FROM lists;
+        ');
+        $stmtListID->execute();
+        $queryResult = $stmtListID->fetch();
+        $list_id = $queryResult['list_id'];
+        $this->debug($list_id);
+        //foreach ($friends_ids as $user_id) {
+            //if(is_integer($friends_ids)){
+                $stmt2 = $this->database->connect()->prepare('
+                INSERT INTO users_lists (user_id, list_id)
+                    VALUES (:user_id, :list_id);
+                ');
+                $stmt2->bindParam(':user_id', $friend_id, PDO::PARAM_STR);
+                $stmt2->bindParam(':list_id', $list_id, PDO::PARAM_STR);
+                $stmt2->execute();
+                //}
+                //}
+        $stmt2->bindParam(':user_id', $owner_id, PDO::PARAM_STR);
+        $stmt2->execute();
+    }
 }

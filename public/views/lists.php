@@ -21,15 +21,17 @@
     <div class="mainFrame">
         <div class="headerClass">
             <span>Twoje listy</span>
-            <button type="button-signUp" onclick="addNewListWnd()"><div class="addNew">+</div></button>
+            <button type="button" onclick="addNewListWnd()"><div class="addNew">+</div></button>
         </div>
         <!-- Dodać php z wczytywaniem list z bazy i wyswietlaniem zamiast tych elementów -->
         <div class = "lists">
             <?php
                 require_once __DIR__.'/../../src/repository/ListsRepository.php';
+                require_once __DIR__.'/../../src/controllers/SessionController.php';
                 $session = new SessionController();
                 if(!$session->checkSession()) {
                     echo "Brak sesji";
+                    
                     // przekieruj do login.php
                 } else {
                     $listsRepo = new ListsRepository();
@@ -49,16 +51,46 @@
     </div>
 
     <div class="newListWnd">
-        <form method="post" action="">
+        <form method="post" class="addNewList">
             <input type="listName" name="listName" placeholder="Nazwa Listy">
-            <input type="friend" name="friend" placeholder="Partner">
+            <input type="friend" name="friend" placeholder="ID znajomego">
             <input type="submit" value="Dodaj">
         </form>
     </div>
 </body>
 
 <script>
-    function addNewListWnd(e) {
+    function addNewListWnd() {
         document.querySelector('.newListWnd').classList.toggle('visible');
     }
+
+    function postData(url = '', data = {}) {
+    // Opcje żądania
+        const options = {
+            method: 'POST',     // Metoda HTTP
+            body: data
+        };
+
+        // Wykonanie żądania fetch z podanym adresem URL i opcjami
+        return fetch(url, options)
+            .then(response => {
+                console.log[response.status];
+
+                location.reload();
+                })
+            .catch(error => console.error('Error:', error)); // Obsługa błędów
+    }
+
+    document.querySelector('.addNewList').addEventListener('submit', (e) => {
+        e.preventDefault();
+        let data = new FormData(e.target);
+        data.append('user_id', 
+            <?php 
+                require_once __DIR__.'/../../src/controllers/SessionController.php';
+                $session = new SessionController();
+                echo $session->getUserId();
+            ?>);
+        postData("/addNewList", data);
+    });
+
 </script>

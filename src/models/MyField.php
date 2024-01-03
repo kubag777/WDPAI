@@ -3,6 +3,7 @@
 class MyField {
     private $name;
     private $isChecked;
+    private $field_id;
 
     public function __construct(
         string $name,
@@ -20,5 +21,16 @@ class MyField {
     }
     public function getName() {
         return $this->name;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+    public function getFieldId() {
+        return $this->field_id;
+    }
+    public function setFieldId($field_id) {
+        $this->field_id = $field_id;
     }
 }

@@ -116,7 +116,6 @@
 }
 
 .newListWnd {
-    flex-direction: column;
     background: #eef14d;
     border: black solid 2px;
     border-radius: 20px;
@@ -127,23 +126,43 @@
 
 .newListWnd.visible {
     display: flex;
+    flex-direction: column;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    justify-content: center;
 }
 
 .newListWnd>form {
-    width: 90%;
-    margin-left: 5%;
-    padding: 5px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    position: fixed;
+    justify-content: center;
+    height: 40%;
+    width: 100%;
 }
 
 .newListWnd>form>input {
-    display: flex;
+    width: 100%;
+    margin: 1vh 0;
+    box-sizing: border-box;
+    background-color: #999999;
+    border-radius: 50px;
+    width: 80%;
+    margin-left: 10%;
+    height: 50%;
+    text-align: center;
+    font-size: 4vh;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 600;
+    border: black solid 2px;
+}
+
+.newListWnd>form>input[type="submit"] {
+    width: 40%;
+    margin-left: 30%;
 }
 
 @media screen and (max-aspect-ratio: 16/9) {
