@@ -7,7 +7,7 @@ The "Online Shopping List" website allows users to collaboratively create and ma
 - [Technologies](#technologies)
 - [Usage](#usage)
 - [Features](#features)
-- [Contributing](#contributing)
+- [Author](#author)
 
 ## Installation
 
@@ -51,3 +51,7 @@ Each participant can mark products on the list as purchased, updating the produc
 
 4. Marking Purchased Products: Each user has the ability to mark items on the list as purchased, updating the item's status for other users.
 
+
+## Author
+
+Jakub Głusiński
