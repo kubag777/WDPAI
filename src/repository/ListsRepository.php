@@ -105,4 +105,36 @@ class ListsRepository extends Repository
         $stmt2->bindParam(':user_id', $owner_id, PDO::PARAM_STR);
         $stmt2->execute();
     }
+
+    public function getOwner(int $list_id): int{
+        $stmt = $this->database->connect()->prepare('
+            SELECT owner_user_id
+            FROM lists
+            WHERE list_id = :list_id;
+        ');
+        $stmt->bindParam(':list_id', $list_id, PDO::PARAM_STR);
+        $stmt->execute();
+        $queryResult = $stmt->fetch();
+        return $queryResult['owner_user_id'];
+    }
+
+    public function deleteList(int $list_id): void{
+        $stmt  = $this->database->connect()->prepare('
+        DELETE FROM fields WHERE list_id = :list_id;
+        ');
+        $stmt->bindParam(':list_id', $list_id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $stmt = $this->database->connect()->prepare('
+        DELETE FROM users_lists WHERE list_id = :list_id;
+        ');
+        $stmt->bindParam(':list_id', $list_id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $stmt = $this->database->connect()->prepare('
+        DELETE FROM lists WHERE list_id = :list_id;
+        ');
+        $stmt->bindParam(':list_id', $list_id, PDO::PARAM_STR);
+        $stmt->execute();
+    }
 }

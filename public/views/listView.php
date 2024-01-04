@@ -6,6 +6,12 @@
     <link rel="stylesheet" type="text/css" href="/public/css/listView.css">
 
     <title>Lista</title>
+    <script>
+        function deleteListButton(e) {
+            document.querySelector('button.deleteList').classList.add('visible');
+        }
+    </script>
+
 </head>
 
 <body>
@@ -14,14 +20,32 @@
             <li><a href="/profile">Profil</a></li>
             <li><a href="/friends">Znajomi</a></li>
             <li><a href="/lists">Twoje Listy</a></li>
-            <li style="float:right"><a href="#" onclick="window.location.href='logout'">Wyloguj się</a></li>
+            <li style="float:right"><a href="#" onclick="window.location.href='/logout'">Wyloguj się</a></li>
         </ul>
     </header>
 
     <div class="mainFrame">
         <div class="header">
+            <button class = "deleteList" type="button" onclick="deleteList()">Usuń listę</button>
+            <?php
+                require_once __DIR__. '/../../src/controllers/SessionController.php';
+                require_once __DIR__. '/../../src/repository/ListsRepository.php';
+                
+                if (isset($_GET['id'])) {
+                    $list_id = $_GET['id'];
+                    $listsRepo = new ListsRepository(); 
+                    $owner_id = $listsRepo->getOwner($list_id);
+                    $session = new SessionController();
+                    $user_id = $session->getUserId();
+                    if($user_id == $owner_id){
+                        echo "<script>";
+                        echo "deleteListButton();";
+                        echo "</script>";
+                    }
+                }
+            ?>
             <span>Nazwa listy</span>
-            <button type="button" onclick="addNewFieldWnd()"><div class="addNew">+</div></button>
+            <button class = "addFieldButton" type="button" onclick="addNewFieldWnd()"><div class="addNew">+</div></button>
         </div>
         <div class = "fields">
             <?php
@@ -41,6 +65,10 @@
 <script>
     function addNewFieldWnd(e) {
         document.querySelector('.newFieldWnd').classList.toggle('visible');
+    }
+
+    function deleteListButton(e) {
+        document.querySelector('button.deleteList').classList.add('visible');
     }
 
     function changeFieldState(field_id){
@@ -84,7 +112,12 @@
         odswiezIframe();
     };
 
-
+    function deleteList() {
+        window.location.href = '/profile';
+        let data = new FormData();
+        data.append('list_id', <?php echo $_GET['id'];?>);
+        postData("/deleteList", data);
+    }
 
 
 </script>

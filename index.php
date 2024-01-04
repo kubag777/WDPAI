@@ -22,6 +22,8 @@ Router::get('logout', 'SessionController');
 Router::post('addNewField', 'DataController');
 Router::post('addNewList', 'DataController');
 Router::post('changeFieldState', 'DataController');
+Router::post('deleteList', 'DataController');
+
 
 Router::run($path);
 ?>

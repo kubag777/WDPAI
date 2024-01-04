@@ -27,4 +27,11 @@ class DataController extends AppController{
         }
     }
 
+    function deleteList(){  
+        if ($this->isPost()) {
+            $listRepo = new ListsRepository();
+            $listRepo->deleteList($_POST['list_id']);
+        }
+    }
+
 }
