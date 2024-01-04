@@ -25,8 +25,8 @@
             <?php
             ?>
 
-            <h1>Imie Nazwisko</h1>
-            <h3>Opis</h3>
+            <h1>Jan Kowalski</h1>
+            <h3>Jakiś opis</h3>
         </div>
     <div>
 </body>

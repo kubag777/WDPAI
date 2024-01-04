@@ -45,3 +45,6 @@ Each participant can mark products on the list as purchased, updating the produc
 3. Sharing Lists with Friends: Shopping lists can be shared with other users, enabling collaborative shopping planning.
 
 4. Marking Purchased Products: Each user has the ability to mark items on the list as purchased, updating the item's status for other users.
+
+
+![Alt text](/ScreenShots/lists.PNG?raw=true "Optional Title")
