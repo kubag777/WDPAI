@@ -26,7 +26,6 @@
             ?>
 
             <h1>Imie Nazwisko</h1>
-            <h2>Wiek</h2>
             <h3>Opis</h3>
         </div>
     <div>

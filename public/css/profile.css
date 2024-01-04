@@ -2,11 +2,12 @@
     background: #eef14d;
     display: flex;
     flex-direction: row;
-    margin: 10vh 0;
+    margin: 10vh 10vw;
     padding: 10px;
     width: 80%;
-    height: 80vh;
     border-radius: 50px;
+    margin-top: 100px;
+    height: calc(80vh - 100px);
 }
 
 .picture{
@@ -14,6 +15,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+img{
+    width: 60%;
+    border-radius: 100%;
+    
 }
 
 .info{
@@ -25,11 +32,6 @@
     padding: 1vh 1vw;
 }
 
-img{
-    width: 25vw;
-    height: 25vw;
-    border-radius: 100%;
-}
 
 h1{
     font-size: 6vw;

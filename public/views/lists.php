@@ -11,9 +11,9 @@
     <!-- Użyć w każdym pliku po zalogowaniu -->
     <header>
         <ul>
-            <li><a class="active" href="profile">Profil</a></li>
+            <li><a href="profile">Profil</a></li>
             <li><a href="friends">Znajomi</a></li>
-            <li><a href="lists">Twoje Listy</a></li>
+            <li><a class="active" href="lists">Twoje Listy</a></li>
             <li style="float:right"><a href="#" onclick="window.location.href='logout'">Wyloguj się</a></li>
         </ul>
     </header>
@@ -23,7 +23,6 @@
             <span>Twoje listy</span>
             <button type="button" onclick="addNewListWnd()"><div class="addNew">+</div></button>
         </div>
-        <!-- Dodać php z wczytywaniem list z bazy i wyswietlaniem zamiast tych elementów -->
         <div class = "lists">
             <?php
                 require_once __DIR__.'/../../src/repository/ListsRepository.php';
@@ -38,7 +37,7 @@
                     $userLists = $listsRepo->getUserLists($session->getUserId());
                     foreach ($userLists as $list => $value) {
                         echo '<div class = "oneList" onclick="window.location.href=\'listView/?id='.$value->getListID().'\'">';
-                        echo '<div class="listIcon"></div>';
+                        echo '<div class="listIcon"><img src="/public/img/list.png" style="width: 80%;"></div>';
                         echo '<div class="listData">';
                         echo '    <div class="nazwa">'. $value->getName() .'</div>';
                         echo '</div>';

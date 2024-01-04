@@ -11,7 +11,7 @@
 <body>
     <header>
         <ul>
-            <li><a class="active" href="/profile">Profil</a></li>
+            <li><a href="/profile">Profil</a></li>
             <li><a href="/friends">Znajomi</a></li>
             <li><a href="/lists">Twoje Listy</a></li>
             <li style="float:right"><a href="#" onclick="window.location.href='logout'">Wyloguj się</a></li>
@@ -72,31 +72,14 @@
         data.append('list_id', <?php echo $_GET['id'];?>);
         postData("/addNewField", data);
     });
-    
-// POLIGON TESTOWY
-
-    // function refreshTable(){
-    //     fetch(location)
-    //     .then(response => {location.reload();})
-    //     .then(data => {
-    //         document.getElementById('tableHolder').innerHTML = data;
-    //     })
-    //     .catch(error => console.error('Error:', error));
-    //     setTimeout(refreshTable, 5000 );
-    // }
-
-    // setTimeout(refreshTable, 5000 );
 
     function odswiezIframe() {
-        // Pobierz referencję do iframe
         var iframe = document.getElementById('grid-iframe');
-        // Ustaw nową wartość atrybutu src
         iframe.src = iframe.src;
         // Uruchom ponownie funkcję co 5 sekund (5000 ms)
         setTimeout(odswiezIframe, 10000);
     }
 
-    // Uruchom funkcję odświeżającą iframe po załadowaniu strony
     window.onload = function () {
         odswiezIframe();
     };
